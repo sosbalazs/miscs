@@ -1,8 +1,8 @@
-#include "A.h"
+#include "StringTester.h"
 
-*int main() {
-  A a;
-  a.hello();
-  return 0; 
+using namespace stringtest;
+
+int main() {
+    StringTester::test();
 }
 
