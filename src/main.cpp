@@ -1,8 +1,8 @@
-#include "StringTester.h"
+#include "IteratorTester.h"
 
-using namespace stringtest;
+using namespace iteratortest;
 
 int main() {
-    StringTester::test();
+    IteratorTester::test();
 }
 

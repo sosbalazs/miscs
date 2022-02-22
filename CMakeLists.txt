@@ -8,8 +8,12 @@ include_directories(include)
 
 set(SOURCES 
 src/main.cpp 
+#
 src/String.cpp
-src/StringTester.cpp)
+src/StringTester.cpp
+#
+src/IntIterator.cpp
+src/IteratorTester.cpp)
 
 # add the executable
 add_executable(Miscs ${SOURCES})
