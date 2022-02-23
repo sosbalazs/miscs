@@ -2,23 +2,18 @@
 
 namespace iteratortest
 {
-    class IntIterator : public std::iterator<std::random_access_iterator_tag, int>
+    class IntIterator
     {
         public:
-            IntIterator(const IntIterator& newIterator);
             IntIterator(int* data);
+            IntIterator(const IntIterator& intIt);
 
-            IntIterator operator+(size_t delta);
-            IntIterator operator-(size_t delta);
-
-            bool operator!=(const IntIterator& rhs);
-
+            bool operator!=(const IntIterator& intIt);
+            IntIterator operator+(size_t diff);
+            IntIterator operator-(size_t diff);
             IntIterator& operator++();
-            IntIterator operator++(int);
-
+            IntIterator operator++(int /*postfix*/);
             int operator*();
-
-            friend std::ostream& operator<<(std::ostream& os, const IntIterator& intIt);
 
         private:
             int* Data;

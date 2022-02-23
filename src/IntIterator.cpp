@@ -2,35 +2,35 @@
 
 namespace iteratortest
 {
-    IntIterator::IntIterator(const IntIterator& newIterator):Data(newIterator.Data){};
+    IntIterator::IntIterator(int* data):Data(data){}
 
-    IntIterator::IntIterator(int* data): Data(data){}
+    IntIterator::IntIterator(const IntIterator& intIt):Data(intIt.Data){}
 
-    IntIterator IntIterator::operator+(size_t delta)
+    bool IntIterator::operator!=(const IntIterator& intIt)
     {
-        IntIterator result = *this;
+        return Data != intIt.Data;
+    }
 
-        for(size_t i = 0; i < delta; ++i)
+    IntIterator IntIterator::operator+(size_t diff)
+    {
+       IntIterator result = *this;
+
+        for(size_t i = 0; i < diff; ++i)
         {
             ++result.Data;
         }
         return result;
     }
 
-    IntIterator IntIterator::operator-(size_t delta)
+    IntIterator IntIterator::operator-(size_t diff)
     {
         IntIterator result = *this;
 
-        for(size_t i = 0; i < delta; ++i)
+        for(size_t i = 0; i < diff; ++i)
         {
-            --result.Data;
+            --Data;
         }
         return result;
-    }
-
-    bool IntIterator::operator!=(const IntIterator& rhs)
-    {
-        return Data != rhs.Data;
     }
 
     IntIterator& IntIterator::operator++()
@@ -39,21 +39,15 @@ namespace iteratortest
         return *this;
     }
 
-    IntIterator IntIterator::operator++(int)
+    IntIterator IntIterator::operator++(int /*postfix*/)
     {
         IntIterator result = *this;
         ++Data;
-        return result;
+        return result; 
     }
 
     int IntIterator::operator*()
     {
         return *Data;
-    }
-
-    std::ostream& operator<<(std::ostream& os, const IntIterator& intIt)
-    {
-        os << *intIt.Data;
-        return os;
     }
 }

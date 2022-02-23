@@ -13,7 +13,7 @@ namespace iteratortest
         IntIterator begin = &myVector[0];
         IntIterator end = begin + myVector.size();
 
-        std::cout << "First member: " << begin << ", Last member: " << end - 1 << std::endl;
+        std::cout << "First member: " << *begin << ", Last member: " << *(end - 1) << std::endl;
 
         std::cout << "The full vector: \n";
         for(IntIterator it = begin; it != end; ++it)
