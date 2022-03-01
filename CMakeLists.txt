@@ -13,7 +13,9 @@ src/String.cpp
 src/StringTester.cpp
 #
 src/IntIterator.cpp
-src/IteratorTester.cpp)
+src/IteratorTester.cpp
+#
+src/List.cpp)
 
 # add the executable
 add_executable(Miscs ${SOURCES})
