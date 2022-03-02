@@ -15,7 +15,8 @@ src/StringTester.cpp
 src/IntIterator.cpp
 src/IteratorTester.cpp
 #
-src/List.cpp)
+src/Dequeue.cpp
+src/DequeueTester.cpp)
 
 # add the executable
 add_executable(Miscs ${SOURCES})

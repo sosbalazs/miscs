@@ -1,6 +1,6 @@
-namespace listtest
+namespace dequeuetest
 {
-    class ListTester
+    class DequeueTester
     {
         public:
             void static test();

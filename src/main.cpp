@@ -1,8 +1,8 @@
-#include "IteratorTester.h"
+#include "DequeueTester.h"
 
-using namespace iteratortest;
+using namespace dequeuetest;
 
 int main() {
-    IteratorTester::test();
+    DequeueTester::test();
 }
 
