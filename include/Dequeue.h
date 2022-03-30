@@ -7,7 +7,7 @@ namespace dequeuetest
     {
         Node(Node* previousNode, T Data);
         Node(const Node& rhs);
-        Node& operator=(const Node& rhs);
+        Node* operator=(const Node& rhs);
         ~Node();
 
         Node* PreviousNode;
@@ -27,6 +27,13 @@ namespace dequeuetest
     Node<T>::~Node()
     {
         std::cout << "Node deleted (" << this << ") PreviousNode: " << PreviousNode << ", Data: " << Data << ", NextNode: " << NextNode << "\n";
+    }
+
+    template<typename T>
+    Node<T>* Node<T>::operator=(const Node<T>& rhs)
+    {
+        std::cout << "Assignment: " << &rhs << std::endl; 
+        return rhs;
     }
 
     template<typename T>
@@ -50,21 +57,22 @@ namespace dequeuetest
     {
         while(Head != nullptr)
         {
-            std::cout << "Head: " << Head << "\n";
             Node<T>* tmp = Head->NextNode;
-            std::cout << "Tmp: " << tmp << "\n";
             tmp->PreviousNode = nullptr;
             delete Head;
             Head = tmp;
-            std::cout << "Head: " << Head << "\n";
         }
     }
 
     template<typename T>
     void Dequeue<T>::push_back(T data)
     {
+        std::cout << "Push back\n";
         Node<T>* newNode = new Node<T>(Tail, data);
-        //Tail->NextNode = newNode;
+        if(Tail != nullptr)
+        {
+            Tail->NextNode = newNode;
+        }
         Tail = newNode;
         if(Head == nullptr)
         {
