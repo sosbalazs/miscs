@@ -16,7 +16,10 @@ src/IntIterator.cpp
 src/IteratorTester.cpp
 #
 src/Dequeue.cpp
-src/DequeueTester.cpp)
+src/DequeueTester.cpp
+#
+src/Queue.cpp
+src/QueueTester.cpp)
 
 # add the executable
 add_executable(Miscs ${SOURCES})

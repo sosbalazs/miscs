@@ -30,8 +30,8 @@ namespace dequeuetest
         /*for(auto element:myDequeue)
         {
             std::cout << element << ", ";
-        }
-        std::cout << "\n";*/
+        }*/
+        std::cout << "\n";
 
     }
 

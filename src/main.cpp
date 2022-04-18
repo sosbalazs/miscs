@@ -1,8 +1,8 @@
-#include "DequeueTester.h"
+#include "QueueTester.h"
 
-using namespace dequeuetest;
+using namespace queuetest;
 
 int main() {
-    DequeueTester::test();
+    QueueTester::test();
 }
 
